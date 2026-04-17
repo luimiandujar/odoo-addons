@@ -62,8 +62,7 @@
                     </group>
                     <group string="Acabados" invisible="not is_print_product">
                         <field name="finishing_line_ids"
-                               nolabel="1"
-                               context="{'default_product_tmpl_id': active_id}">
+                               nolabel="1">
                             <list editable="bottom">
                                 <field name="sequence" widget="handle"/>
                                 <field name="operation_id"/>
