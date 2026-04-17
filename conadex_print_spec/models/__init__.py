@@ -5,6 +5,7 @@
 from . import print_sheet_size
 from . import print_finishing_operation
 from . import print_finishing_line
+from . import print_press_speed_line
 from . import product_template
 from . import mrp_bom
 from . import mrp_workcenter

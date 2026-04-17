@@ -36,6 +36,7 @@ WC_XIDS = {
 PRESS_CAPACITY = {
     "HEI-PM74": {
         "is_press": True,
+        "press_type": "offset",
         "max_sheet_w_in": 20.5,
         "max_sheet_h_in": 29.0,
         "max_colors_per_pass": 4,
@@ -44,6 +45,7 @@ PRESS_CAPACITY = {
     },
     "HEI-QM52-1": {
         "is_press": True,
+        "press_type": "offset",
         "max_sheet_w_in": 14.0,
         "max_sheet_h_in": 20.0,
         "max_colors_per_pass": 2,
@@ -52,6 +54,7 @@ PRESS_CAPACITY = {
     },
     "HEI-QM52-2": {
         "is_press": True,
+        "press_type": "offset",
         "max_sheet_w_in": 14.0,
         "max_sheet_h_in": 20.0,
         "max_colors_per_pass": 2,

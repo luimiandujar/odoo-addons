@@ -10,16 +10,39 @@
             <xpath expr="//notebook" position="inside">
                 <page string="Capacidad imprenta" name="print_capacity">
                     <group>
-                        <group string="Capacidad de pliego">
-                            <field name="max_sheet_w_in"/>
-                            <field name="max_sheet_h_in"/>
-                            <field name="max_colors_per_pass"/>
+                        <group string="Tipo de máquina">
                             <field name="is_press"/>
+                            <field name="press_type" invisible="not is_press"/>
                         </group>
-                        <group string="Rendimiento">
+                        <group string="Capacidad de pliego">
+                            <field name="max_sheet_w_in" invisible="not is_press"/>
+                            <field name="max_sheet_h_in" invisible="not is_press"/>
+                            <field name="max_colors_per_pass" invisible="not is_press"/>
+                        </group>
+                    </group>
+                    <group invisible="not is_press">
+                        <group string="Rendimiento offset" invisible="press_type != 'offset'">
                             <field name="run_speed_sph"/>
                             <field name="makeready_sheets"/>
                         </group>
+                        <group string="Costo digital" invisible="press_type != 'digital'">
+                            <field name="cost_per_click"/>
+                            <field name="makeready_sheets"/>
+                        </group>
+                        <group string="Rendimiento gran formato" invisible="press_type != 'gran_formato'">
+                            <field name="run_speed_sph"/>
+                        </group>
+                    </group>
+                    <group string="Velocidades por tamaño de pliego"
+                           invisible="not is_press or press_type == 'offset'">
+                        <field name="speed_line_ids" nolabel="1">
+                            <list editable="bottom">
+                                <field name="sheet_size_id"/>
+                                <field name="speed_value"/>
+                                <field name="speed_unit"/>
+                                <field name="speed_sph" readonly="1"/>
+                            </list>
+                        </field>
                     </group>
                 </page>
             </xpath>
