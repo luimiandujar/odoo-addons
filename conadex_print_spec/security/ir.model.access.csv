@@ -7,5 +7,5 @@ access_print_finishing_cons_user,print.finishing.cons.user,model_conadex_print_f
 access_print_finishing_cons_manager,print.finishing.cons.manager,model_conadex_print_finishing_consumable_line,group_print_manager,1,1,1,1
 access_print_finishing_line_user,print.finishing.line.user,model_conadex_print_finishing_line,group_print_user,1,1,1,1
 access_print_finishing_line_manager,print.finishing.line.manager,model_conadex_print_finishing_line,group_print_manager,1,1,1,1
-access_press_speed_line_user,press.speed.line.user,model_conadex_press_speed_line,group_print_user,1,0,0,0
+access_press_speed_line_base,press.speed.line.base,model_conadex_press_speed_line,base.group_user,1,0,0,0
 access_press_speed_line_manager,press.speed.line.manager,model_conadex_press_speed_line,group_print_manager,1,1,1,1
