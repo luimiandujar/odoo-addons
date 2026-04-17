@@ -15,7 +15,6 @@
     <record id="group_print_manager" model="res.groups">
         <field name="name">Gestor imprenta</field>
         <field name="implied_ids" eval="[(4, ref('group_print_user'))]"/>
-        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
     </record>
 
 </odoo>
