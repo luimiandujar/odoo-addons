@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_mrp_bom_print_spec_form" model="ir.ui.view">
+        <field name="name">mrp.bom.print.spec.form</field>
+        <field name="model">mrp.bom</field>
+        <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//notebook" position="inside">
+                <page string="Imprenta" name="print_bom"
+                      invisible="not product_tmpl_id or not product_tmpl_id.is_print_product">
+                    <group>
+                        <group string="Pliego e imposición">
+                            <field name="sheet_size_id"/>
+                            <field name="ups_computed" readonly="1"/>
+                            <field name="ups_override"/>
+                            <field name="ups_effective" readonly="1"/>
+                            <field name="tiro_retiro"/>
+                            <field name="plate_count" readonly="1"/>
+                        </group>
+                        <group string="Manufactura">
+                            <field name="setup_sheets"/>
+                            <field name="requires_die_id"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

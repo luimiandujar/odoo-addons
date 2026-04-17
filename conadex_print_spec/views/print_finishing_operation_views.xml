@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_print_finishing_operation_tree" model="ir.ui.view">
+        <field name="name">conadex.print.finishing.operation.tree</field>
+        <field name="model">conadex.print.finishing.operation</field>
+        <field name="arch" type="xml">
+            <list string="Catálogo de acabados" default_order="sequence,name">
+                <field name="sequence" widget="handle"/>
+                <field name="code"/>
+                <field name="name"/>
+                <field name="workcenter_id"/>
+                <field name="run_unit"/>
+                <field name="run_rate"/>
+                <field name="cost_per_hour"/>
+                <field name="active" column_invisible="True"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_print_finishing_operation_form" model="ir.ui.view">
+        <field name="name">conadex.print.finishing.operation.form</field>
+        <field name="model">conadex.print.finishing.operation</field>
+        <field name="arch" type="xml">
+            <form string="Operación de acabado">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" placeholder="Ej: Barniz UV brillante"/></h1>
+                    </div>
+                    <group>
+                        <group string="Identificación">
+                            <field name="code"/>
+                            <field name="sequence"/>
+                            <field name="active"/>
+                        </group>
+                        <group string="Work Center">
+                            <field name="workcenter_id"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Setup">
+                            <field name="setup_minutes"/>
+                            <field name="setup_cost"/>
+                        </group>
+                        <group string="Corrida">
+                            <field name="run_unit"/>
+                            <field name="run_rate"/>
+                            <field name="cost_per_hour"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Consumibles">
+                            <field name="consumable_line_ids">
+                                <list editable="bottom">
+                                    <field name="product_id"/>
+                                    <field name="consumption_basis"/>
+                                    <field name="quantity"/>
+                                    <field name="uom_id" readonly="1"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Observaciones">
+                            <field name="notes" placeholder="Instrucciones técnicas para el operario..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_print_finishing_operation" model="ir.actions.act_window">
+        <field name="name">Catálogo de acabados</field>
+        <field name="res_model">conadex.print.finishing.operation</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{"active_test": False}</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_print_sheet_size_tree" model="ir.ui.view">
+        <field name="name">conadex.print.sheet.size.tree</field>
+        <field name="model">conadex.print.sheet.size</field>
+        <field name="arch" type="xml">
+            <list string="Tamaños de pliego">
+                <field name="name"/>
+                <field name="width_in"/>
+                <field name="height_in"/>
+                <field name="compatible_machine_ids" widget="many2many_tags"/>
+                <field name="active" column_invisible="True"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_print_sheet_size_form" model="ir.ui.view">
+        <field name="name">conadex.print.sheet.size.form</field>
+        <field name="model">conadex.print.sheet.size</field>
+        <field name="arch" type="xml">
+            <form string="Tamaño de pliego">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" placeholder="Ej: 20 × 28"/></h1>
+                    </div>
+                    <group>
+                        <group string="Dimensiones">
+                            <field name="width_in"/>
+                            <field name="height_in"/>
+                        </group>
+                        <group string="Estado">
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <group string="Máquinas compatibles">
+                        <field name="compatible_machine_ids" nolabel="1" widget="many2many_tags"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_print_sheet_size" model="ir.actions.act_window">
+        <field name="name">Tamaños de pliego</field>
+        <field name="res_model">conadex.print.sheet.size</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{"active_test": False}</field>
+    </record>
+
+</odoo>

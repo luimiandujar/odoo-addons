@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Menú raíz bajo Manufacturing -->
+    <menuitem id="menu_print_spec_root"
+              name="Imprenta"
+              parent="mrp.menu_mrp_root"
+              sequence="99"/>
+
+    <menuitem id="menu_print_spec_config"
+              name="Configuración imprenta"
+              parent="menu_print_spec_root"
+              sequence="10"/>
+
+    <menuitem id="menu_print_sheet_size"
+              name="Tamaños de pliego"
+              parent="menu_print_spec_config"
+              action="action_print_sheet_size"
+              sequence="10"/>
+
+    <menuitem id="menu_print_finishing_operation"
+              name="Catálogo de acabados"
+              parent="menu_print_spec_config"
+              action="action_print_finishing_operation"
+              sequence="20"/>
+
+</odoo>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Vista inline usada dentro del form de product.template.
+         No se registra acción independiente: se accede desde el producto. -->
+
+    <record id="view_print_finishing_line_inline" model="ir.ui.view">
+        <field name="name">conadex.print.finishing.line.inline</field>
+        <field name="model">conadex.print.finishing.line</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="operation_id"/>
+                <field name="workcenter_id" readonly="1"/>
+                <field name="run_unit" readonly="1"/>
+                <field name="notes"/>
+            </list>
+        </field>
+    </record>
+
+</odoo>

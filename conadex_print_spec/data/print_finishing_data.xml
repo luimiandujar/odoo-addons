@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Catálogo inicial de operaciones de acabado para Conadex.
+    Valores numéricos son de arranque — calibrar con observación real en piso
+    durante las primeras semanas de uso del Módulo 3.
+    noupdate="1": estos registros no se sobreescriben en actualizaciones del módulo.
+-->
+<odoo noupdate="1">
+
+    <!-- BARN_UV — Barniz UV brillante -->
+    <!-- workcenter_id se asigna por post_init_hook (ATF-UV126) -->
+    <record id="finishing_op_barn_uv" model="conadex.print.finishing.operation">
+        <field name="name">Barniz UV brillante</field>
+        <field name="code">BARN_UV</field>
+        <field name="sequence">10</field>
+        <field name="setup_minutes">15</field>
+        <field name="setup_cost">0.0</field>
+        <field name="run_unit">sheets</field>
+        <field name="run_rate">3000</field>
+        <field name="cost_per_hour">40.0</field>
+        <field name="notes">Aplicar barniz UV brillante sobre toda la superficie. Verificar viscosidad antes de arrancar.</field>
+    </record>
+
+    <!-- LAM_MATE — Laminado BOPP mate -->
+    <!-- workcenter_id se asigna por post_init_hook (LAM-950) -->
+    <record id="finishing_op_lam_mate" model="conadex.print.finishing.operation">
+        <field name="name">Laminado BOPP mate</field>
+        <field name="code">LAM_MATE</field>
+        <field name="sequence">20</field>
+        <field name="setup_minutes">20</field>
+        <field name="setup_cost">0.0</field>
+        <field name="run_unit">m2</field>
+        <field name="run_rate">1800</field>
+        <field name="cost_per_hour">45.0</field>
+        <field name="notes">Película BOPP mate. Temperatura de laminado: verificar especificación del material según proveedor.</field>
+    </record>
+
+    <!-- LAM_BRILLO — Laminado BOPP brillo -->
+    <!-- workcenter_id se asigna por post_init_hook (LAM-950) -->
+    <record id="finishing_op_lam_brillo" model="conadex.print.finishing.operation">
+        <field name="name">Laminado BOPP brillo</field>
+        <field name="code">LAM_BRILLO</field>
+        <field name="sequence">21</field>
+        <field name="setup_minutes">20</field>
+        <field name="setup_cost">0.0</field>
+        <field name="run_unit">m2</field>
+        <field name="run_rate">1800</field>
+        <field name="cost_per_hour">45.0</field>
+        <field name="notes">Película BOPP brillo. Mismos parámetros que mate; cambiar rollo de película.</field>
+    </record>
+
+    <!-- UV_SEL — UV selectivo -->
+    <!-- workcenter_id se asigna por post_init_hook (ATF-UV126) -->
+    <record id="finishing_op_uv_sel" model="conadex.print.finishing.operation">
+        <field name="name">UV selectivo</field>
+        <field name="code">UV_SEL</field>
+        <field name="sequence">30</field>
+        <field name="setup_minutes">30</field>
+        <field name="setup_cost">0.0</field>
+        <field name="run_unit">sheets</field>
+        <field name="run_rate">2000</field>
+        <field name="cost_per_hour">50.0</field>
+        <field name="notes">Requiere pantalla serigráfica para máscara de UV selectivo. Verificar registro con el arte.</field>
+    </record>
+
+    <!-- TROQ — Troquelado -->
+    <!-- workcenter_id se asigna por post_init_hook (TROQ-THOM) -->
+    <record id="finishing_op_troq" model="conadex.print.finishing.operation">
+        <field name="name">Troquelado</field>
+        <field name="code">TROQ</field>
+        <field name="sequence">40</field>
+        <field name="setup_minutes">45</field>
+        <field name="setup_cost">0.0</field>
+        <field name="run_unit">sheets</field>
+        <field name="run_rate">4000</field>
+        <field name="cost_per_hour">45.0</field>
+        <field name="notes">Verificar suaje requerido en el Job Ticket antes de montar. Revisión de registro cada 500 pliegos.</field>
+    </record>
+
+    <!-- FOIL — Estampado en caliente (foil) -->
+    <!-- workcenter_id se asigna por post_init_hook (DEPAI-750) -->
+    <record id="finishing_op_foil" model="conadex.print.finishing.operation">
+        <field name="name">Estampado en caliente (foil)</field>
+        <field name="code">FOIL</field>
+        <field name="sequence">35</field>
+        <field name="setup_minutes">25</field>
+        <field name="setup_cost">0.0</field>
+        <field name="run_unit">sheets</field>
+        <field name="run_rate">2500</field>
+        <field name="cost_per_hour">55.0</field>
+        <field name="notes">Temperatura de estampado según tipo de foil. Verificar presión de cilindro al arrancar.</field>
+    </record>
+
+    <!-- PEGADO — Pegado de caja -->
+    <!-- workcenter_id se asigna por post_init_hook (FORMA-WY500) -->
+    <record id="finishing_op_pegado" model="conadex.print.finishing.operation">
+        <field name="name">Pegado de caja</field>
+        <field name="code">PEGADO</field>
+        <field name="sequence">50</field>
+        <field name="setup_minutes">10</field>
+        <field name="setup_cost">0.0</field>
+        <field name="run_unit">units</field>
+        <field name="run_rate">6000</field>
+        <field name="cost_per_hour">35.0</field>
+        <field name="notes">Verificar gramaje de pegamento según especificación del producto. Muestreo de resistencia al inicio de corrida.</field>
+    </record>
+
+</odoo>

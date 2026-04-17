@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_product_template_print_spec_form" model="ir.ui.view">
+        <field name="name">product.template.print.spec.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+
+            <!-- Checkbox en la cabecera, junto al nombre -->
+            <xpath expr="//div[@name='button_box']" position="before">
+                <field name="is_print_product" invisible="1"/>
+            </xpath>
+
+            <!-- Pestaña Print Spec, visible solo para productos de imprenta -->
+            <xpath expr="//notebook" position="inside">
+                <page string="Print Spec" invisible="not is_print_product" name="print_spec">
+                    <group>
+                        <group string="Activación">
+                            <field name="is_print_product"/>
+                            <field name="print_type" invisible="not is_print_product"/>
+                            <field name="customer_code" invisible="not is_print_product"/>
+                        </group>
+                        <group string="Arte">
+                            <field name="artwork_location"
+                                   invisible="not is_print_product"
+                                   widget="url"/>
+                        </group>
+                    </group>
+                    <group string="Formatos" invisible="not is_print_product">
+                        <group string="Formato cerrado">
+                            <field name="closed_format_w"/>
+                            <field name="closed_format_h"/>
+                        </group>
+                        <group string="Formato abierto (antes de pliegue)">
+                            <field name="open_format_w"/>
+                            <field name="open_format_h"/>
+                        </group>
+                    </group>
+                    <group invisible="not is_print_product">
+                        <group string="Colores e impresión">
+                            <field name="page_count"/>
+                            <field name="colors_front"/>
+                            <field name="colors_back"/>
+                        </group>
+                        <group string="Sangre">
+                            <field name="has_bleed"/>
+                            <field name="bleed_mm" invisible="not has_bleed"/>
+                        </group>
+                    </group>
+                    <group invisible="not is_print_product">
+                        <group string="Papel">
+                            <field name="default_paper_id"/>
+                            <field name="default_paper_weight_g"/>
+                            <field name="grain_direction"/>
+                        </group>
+                        <group string="Imposición y merma">
+                            <field name="standard_ups"/>
+                            <field name="standard_waste_pct"
+                                   widget="percentage"/>
+                        </group>
+                    </group>
+                    <group string="Acabados" invisible="not is_print_product">
+                        <field name="finishing_line_ids"
+                               nolabel="1"
+                               context="{'default_product_tmpl_id': active_id}">
+                            <list editable="bottom">
+                                <field name="sequence" widget="handle"/>
+                                <field name="operation_id"/>
+                                <field name="workcenter_id" readonly="1"/>
+                                <field name="run_unit" readonly="1"/>
+                                <field name="notes"/>
+                            </list>
+                        </field>
+                    </group>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

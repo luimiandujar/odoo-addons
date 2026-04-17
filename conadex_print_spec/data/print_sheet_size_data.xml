@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Tamaños de pliego estandarizados para Conadex.
+    Las máquinas compatibles deben enlazarse manualmente en Odoo una vez
+    instalado el módulo, ya que los work centers ya existen en la base de datos.
+    noupdate="1": no sobreescribir en actualizaciones.
+-->
+<odoo noupdate="1">
+
+    <!-- Pliegos para QM52 (máx. aprox. 14 × 20 in) -->
+    <record id="sheet_size_10x14" model="conadex.print.sheet.size">
+        <field name="name">10 × 14</field>
+        <field name="width_in">10.0</field>
+        <field name="height_in">14.0</field>
+    </record>
+
+    <record id="sheet_size_12x18" model="conadex.print.sheet.size">
+        <field name="name">12 × 18</field>
+        <field name="width_in">12.0</field>
+        <field name="height_in">18.0</field>
+    </record>
+
+    <record id="sheet_size_13x19" model="conadex.print.sheet.size">
+        <field name="name">13 × 19</field>
+        <field name="width_in">13.0</field>
+        <field name="height_in">19.0</field>
+    </record>
+
+    <!-- Pliego límite QM52 / entrada PM74 -->
+    <record id="sheet_size_14x20" model="conadex.print.sheet.size">
+        <field name="name">14 × 20</field>
+        <field name="width_in">14.0</field>
+        <field name="height_in">20.0</field>
+    </record>
+
+    <!-- Pliegos para PM74 (máx. aprox. 20.5 × 29 in) -->
+    <record id="sheet_size_16x22" model="conadex.print.sheet.size">
+        <field name="name">16 × 22</field>
+        <field name="width_in">16.0</field>
+        <field name="height_in">22.0</field>
+    </record>
+
+    <record id="sheet_size_18x25" model="conadex.print.sheet.size">
+        <field name="name">18 × 25</field>
+        <field name="width_in">18.0</field>
+        <field name="height_in">25.0</field>
+    </record>
+
+    <record id="sheet_size_20x28" model="conadex.print.sheet.size">
+        <field name="name">20 × 28</field>
+        <field name="width_in">20.0</field>
+        <field name="height_in">28.0</field>
+    </record>
+
+    <record id="sheet_size_20p5x29" model="conadex.print.sheet.size">
+        <field name="name">20.5 × 29</field>
+        <field name="width_in">20.5</field>
+        <field name="height_in">29.0</field>
+    </record>
+
+</odoo>

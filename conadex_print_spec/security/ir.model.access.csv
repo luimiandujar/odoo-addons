@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_print_sheet_size_user,print.sheet.size.user,model_conadex_print_sheet_size,group_print_user,1,0,0,0
+access_print_sheet_size_manager,print.sheet.size.manager,model_conadex_print_sheet_size,group_print_manager,1,1,1,1
+access_print_finishing_op_user,print.finishing.op.user,model_conadex_print_finishing_operation,group_print_user,1,0,0,0
+access_print_finishing_op_manager,print.finishing.op.manager,model_conadex_print_finishing_operation,group_print_manager,1,1,1,1
+access_print_finishing_cons_user,print.finishing.cons.user,model_conadex_print_finishing_consumable_line,group_print_user,1,0,0,0
+access_print_finishing_cons_manager,print.finishing.cons.manager,model_conadex_print_finishing_consumable_line,group_print_manager,1,1,1,1
+access_print_finishing_line_user,print.finishing.line.user,model_conadex_print_finishing_line,group_print_user,1,1,1,1
+access_print_finishing_line_manager,print.finishing.line.manager,model_conadex_print_finishing_line,group_print_manager,1,1,1,1

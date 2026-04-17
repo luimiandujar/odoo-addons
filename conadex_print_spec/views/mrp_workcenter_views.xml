@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_mrp_workcenter_print_spec_form" model="ir.ui.view">
+        <field name="name">mrp.workcenter.print.spec.form</field>
+        <field name="model">mrp.workcenter</field>
+        <field name="inherit_id" ref="mrp.mrp_workcenter_view"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//notebook" position="inside">
+                <page string="Capacidad imprenta" name="print_capacity">
+                    <group>
+                        <group string="Capacidad de pliego">
+                            <field name="max_sheet_w_in"/>
+                            <field name="max_sheet_h_in"/>
+                            <field name="max_colors_per_pass"/>
+                            <field name="is_press"/>
+                        </group>
+                        <group string="Rendimiento">
+                            <field name="run_speed_sph"/>
+                            <field name="makeready_sheets"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

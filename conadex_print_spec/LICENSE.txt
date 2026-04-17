@@ -1,0 +1,9 @@
+Copyright 2026 Luis Miguel Andújar
+Todos los derechos reservados.
+
+Este software es propiedad exclusiva de Luis Miguel Andújar.
+Queda prohibida su copia, modificación, distribución o uso,
+total o parcial, sin autorización escrita del titular.
+
+El uso de este software por parte de terceros requiere un
+acuerdo de licencia expreso con el titular.
