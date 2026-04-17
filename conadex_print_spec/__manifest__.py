@@ -5,7 +5,7 @@
     "author": "Conadex",
     "website": "",
     "category": "Manufacturing",
-    "license": "Proprietary",
+    "license": "OPL-1",
     "depends": ["product", "mrp", "stock", "maintenance"],
     "post_init_hook": "post_init_hook",
     "data": [
